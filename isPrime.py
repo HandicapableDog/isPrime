@@ -16,13 +16,13 @@ def count(chk):
 	cont = True
 
 	while (cont == True):
-		listPos = 0
-		output = 0
-		cycleNum = chk - 1
-		ls = [1];
 		prime = 0
 		print "Number : Modulus" 
 		while (prime == 0):
+			listPos = 0
+			output = 0
+			cycleNum = chk - 1
+			ls = [1];
 			while (cycleNum > 0):
 				output = chk%cycleNum
 				ls.append(output)
@@ -31,10 +31,12 @@ def count(chk):
 				cycleNum -= 1
 			del ls[-1]
 			if (0 in ls):
-				print "Not a Prime"
+				print str(chk) + " is not a prime"
+				print "Checking" + " " + str(chk + 1)
 				prime = 0
 			else:
-				print "Prime"
+				print str(chk) + " is a prime"
+				print "Checking" + " " + str(chk + 1)
 				prime = 1
 			chk += 1
 		incorrect = 1
