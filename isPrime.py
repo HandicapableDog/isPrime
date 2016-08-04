@@ -1,3 +1,4 @@
+import time
 def start():
 	firstInput = raw_input("1: Check Number\n2: Count Up From Number\n3: Count Up From 2\n4: Loop from Number\nInput Here: ")
 	if (firstInput == "1"):
@@ -16,6 +17,7 @@ def start():
 		start()
 		
 def count(chk):
+	start = time.clock()
 	cont = True
 	while (cont == True):
 		prime = 0
@@ -38,6 +40,7 @@ def count(chk):
 				prime = 0
 			else:
 				print str(chk) + " is a prime"
+				print "Completed in: " + str(time.clock() - start) + " seconds"
 				print "Checking" + " " + str(chk + 1)
 				prime = 1
 			chk += 1
@@ -56,6 +59,7 @@ def count(chk):
 				print "Try again"
 					
 def solver(chk, intType):
+	start = time.clock()
 	#intType defines whether or not lists will be recreated, for types 2 and 3 only
 	listPos = 0
 	output = 0
@@ -70,6 +74,7 @@ def solver(chk, intType):
 			listPos += 1
 			cycleNum -= 1
 		del ls[-1]
+		print "Completed in: " + str(time.clock() - start) + " seconds"
 		if (0 in ls):
 			print "Not a Prime"
 		else:
@@ -91,6 +96,7 @@ def checker():
 		checker()
 
 def loop(chk, loopNum):
+	start = time.clock()
 	cont = True
 	while (cont == True):
 		loopList = [0];
@@ -120,6 +126,7 @@ def loop(chk, loopNum):
 				if (len(loopList) == loopNum):
 					prime = 1
 					print "These are the %d requested prime numbers " %(loopNum) + str(loopList)
+					print "Completed in: " + str(time.clock() - start) + " seconds"
 				else:
 					prime = 0
 			chk += 1
