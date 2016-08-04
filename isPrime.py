@@ -1,5 +1,5 @@
 def start():
-	firstInput = raw_input("1: Check Number\n2: Count Up From Number\n3: Count Up From 2\n4: Loop from Number\nInput Here: ")
+	firstInput = raw_input("1: Check Number\n2: Count Up From Number\n3: Count Up From 2\nInput Here: ")
 	if (firstInput == "1"):
 		firstInput = int(firstInput)
 		checker()
@@ -9,14 +9,12 @@ def start():
 	elif (firstInput == "3"):
 		firstInput = int(firstInput)
 		countUp(firstInput)
-	elif (firstInput == "4"):
-		firstInput = int(firstInput)
-		countUp(firstInput)
 	else:
 		start()
 		
 def count(chk):
 	cont = True
+
 	while (cont == True):
 		prime = 0
 		print "Number : Modulus" 
@@ -88,17 +86,10 @@ def checker():
 	solver(chk,intType)
 		
 		
-loop(chk, loopNum):
-		
-
 		
 def countUp(firstInput):
 	if (firstInput == 2):
 		solver(2, 2)
-	elif (firstInput == 4):
-		chk = raw_input("Insert number to be started from here: ")
-		loopNum = raw_input("Insert number of loops between check: ")
-		loop(chk, loopNum)
 	else:
 		intType = 3
 		chk = input("Insert number to be started from here: ")
