@@ -84,7 +84,11 @@ def solver(chk, intType):
 def checker():
 	intType = 1
 	chk = input("Input number to be checked here: ")
-	solver(chk,intType)
+	if (chk >= 2):
+		solver(chk,intType)
+	else:
+		print "Number must be greater than 1"
+		checker()
 
 def loop(chk, loopNum):
 	cont = True
@@ -140,19 +144,26 @@ def countUp(firstInput):
 		correct = 0
 		while (correct == 0):
 			chk = input("Insert number to be started from here: ")
-			loopNum = input("Insert number of loops between check: ")
 			if (chk >= 2):
+				loopNum = input("Insert number of loops between check: ")
 				if (loopNum <= 500):
-					loop(chk, loopNum)
-					correct = 1
+					if (loopNum >= 2):
+						loop(chk, loopNum)
+						correct = 1
+					else:
+						print "Number of loops must be greater than 1"
 				else:
 					print "Number of loops cannot be greater than 500"
 			else:
-				print "Number must be greater than 2"
+				print "Number must be greater than 1"
 				correct = 0
 	else:
 		intType = 3
 		chk = input("Insert number to be started from here: ")
-		solver(chk, intType)
+		if (chk >= 2):	
+			solver(chk, intType)
+		else:
+			print "Number must be greater than 1"
+			countUp(firstInput)
 
 start()
