@@ -24,8 +24,7 @@ def count(chk):
 		print "Number : Modulus" 
 		time.sleep(1.5)
 		while (prime == 0):
-			listPos = 0
-			output = 0
+			listPos, output = 0,0
 			cycleNum = chk - 1
 			ls = [1];
 			while (cycleNum > 0):
@@ -49,12 +48,9 @@ def count(chk):
 		while (incorrect == 1):
 			cont = raw_input("Would you like to continue onto %d (t/f)?" %(chk))
 			if (cont == "t"):
-				cont = True
-				incorrect = 0
-				prime = 0
+				cont,incorrect,prime = True,0,0
 			elif (cont == "f"):
-				cont = False
-				incorrect = 0
+				cont,incorrect = False,0
 				print "Thank you!"
 			else:
 				print "Try again"
@@ -62,8 +58,7 @@ def count(chk):
 def solver(chk, intType):
 	start = time.clock()
 	#intType defines whether or not lists will be recreated, for types 2 and 3 only
-	listPos = 0
-	output = 0
+	listPos,output = 0,0
 	cycleNum = chk - 1
 	if (intType == 1):
 		ls = [1];
@@ -107,8 +102,7 @@ def loop(chk, loopNum):
 		print "Number : Modulus" 
 		time.sleep(1.5)
 		while (prime == 0):
-			listPos = 0
-			output = 0
+			listPos,output = 0,0
 			cycleNum = chk - 1
 			ls = [1];
 			while (cycleNum > 0):
@@ -137,12 +131,9 @@ def loop(chk, loopNum):
 		while (incorrect == 1):
 			cont = raw_input("Would you like to continue onto %d (t/f)?" %(chk))
 			if (cont == "t"):
-				cont = True
-				incorrect = 0
-				prime = 0
+				cont,incorrect,prime = True,0,0
 			elif (cont == "f"):
-				cont = False
-				incorrect = 0
+				cont,incorrect = False,0
 				print "Thank you!"
 			else:
 				print "Try again"
@@ -150,10 +141,8 @@ def loop(chk, loopNum):
 def divider(chk, chkNum, chkInt, start):
     found = 0
     while (found == 0):
-        output = 0
-        cycleNum = chkNum - 1
-        cycleNum = cycleNum/2
-        nPrime = 0
+        cycleNum = (chkNum - 1)/2
+        nPrime, output = 0,0
         while (nPrime == 0):
             if (chkInt == 0):
                 cycleNum -= 1
@@ -166,13 +155,13 @@ def divider(chk, chkNum, chkInt, start):
                 if (output == 0):
                     nPrime = 1
                 elif (cycleNum == 2):
-                	nprime = 2
+                	nPrime = 2
                 else:
                     cycleNum -= 1
         if (nPrime == 1):
             print str(chk) + " is not a Prime"
             found = 1
-        elif (nprime == 2):
+        elif (nPrime == 2):
             print str(chk) + " is a Prime"
             found = 1
         print "Completed in: " + str(time.clock() - start) + " seconds"
@@ -217,7 +206,7 @@ def countUp(firstInput):
 		    nsolve(chk, chkNum)
 		else:
 		    print "Number must be greater than 1"
-		    countup(3)
+		    countUp(3)
 #	else:
 
 start()
